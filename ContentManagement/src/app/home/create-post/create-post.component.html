@@ -1,0 +1,33 @@
+<div style="display: flex; flex-direction: column; align-items: center; padding: 20px; background-color: #f5f5f5; min-height: 100vh;">
+  <div style="max-width: 800px; width: 100%; padding: 20px; background: #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px; margin-bottom: 20px;">
+    <div >
+      <ul style="list-style-type: none; padding: 0;">
+        <li *ngFor="let post of posts" style="margin-bottom: 20px; padding: 10px; border-bottom: 1px solid #ccc;">
+          <div style="font-size: 18px; font-weight: bold;">{{ post.title }}</div>
+          <div style="margin-bottom: 10px;">{{ post.content }}</div>
+          <a [routerLink]="['/comments', post.postId]" style="color: #007BFF; text-decoration: none; margin-right: 10px;">Comments</a>
+          <button (click)="deletePost(post.postId)" style="padding: 5px 10px; background-color: #DC3545; color: #ffffff; border: none; border-radius: 4px; cursor: pointer;">Delete post</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div style="max-width: 800px; width: 100%; padding: 20px; background: #ffffff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+    <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+      <h2 style="text-align: center; margin-bottom: 20px; color: #333;">Add New Post</h2>
+      <div style="margin-bottom: 20px;">
+        <label for="title" style="display: block; margin-bottom: 5px; color: #555;">Title</label>
+        <input id="title" formControlName="title" type="text" style="width: calc(100% - 20px); padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+      </div>
+      <div style="margin-bottom: 20px;">
+        <label for="postId" style="display: block; margin-bottom: 5px; color: #555;">Id</label>
+        <input id="postId" formControlName="postId" type="text" style="width: calc(100% - 20px); padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;">
+      </div>
+      <div style="margin-bottom: 20px;">
+        <label for="content" style="display: block; margin-bottom: 5px; color: #555;">Content</label>
+        <textarea id="content" formControlName="content" style="width: calc(100% - 20px); padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px;"></textarea>
+      </div>
+      <button type="submit" style="width: 100%; padding: 10px; background-color: #007BFF; color: #ffffff; border: none; border-radius: 4px; font-size: 16px; cursor: pointer;">Add Post</button>
+    </form>
+  </div>
+</div>
