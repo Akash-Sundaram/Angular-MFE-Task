@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "username": "user1",
+      "password": "password1",
+      "id": "0eed"
+    },
+    {
+      "username": "user2",
+      "password": "password2",
+      "id": "f923"
+    },
+    {
+      "id": "ffce",
+      "username": "Akash",
+      "password": "Akash@123"
+    },
+    {
+      "id": "8312",
+      "username": "dhana",
+      "password": "dhana123"
+    }
+  ],
+  "post": [
+    {
+    "postId" : "string",
+    "title" : "string",
+    "content" : "string"
+    }
+  ],
+  "comment": []
+}
